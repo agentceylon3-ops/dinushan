@@ -1,0 +1,2598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- AOS CSS Link -->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <title>Dinushan English</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Font (Sinhala and English) -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;600;700;800&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans Sinhala', 'Poppins', sans-serif;
+}
+body{
+    background-color: black;
+}
+
+/* Hero Section (Full Screen) */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* PC වලට */
+  height: 100dvh; /* Mobile screen එකට හරියටම ෆිට් වෙන්න */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 8%;
+}
+
+/* Background Photo Slider Container */
+.bg-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Slides Base Styling */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: slideAnimation 16s infinite; /* 4 Photos x 4 Seconds = 16s cycle */
+}
+
+/* ඡායාරූප 4 හි Image Links (මෙතනට ඔයාගේ Photo Links දාන්න) */
+.slide-1 {
+  background-image: url('t1.jpg');
+  animation-delay: 0s;
+}
+
+.slide-2 {
+  background-image: url('t2.jpg');
+  animation-delay: 4s;
+}
+
+.slide-3 {
+  background-image: url('t3.jpg');
+  animation-delay: 8s;
+}
+
+.slide-4 {
+  background-image: url('t4.jpg');
+  animation-delay: 12s;
+}
+
+/* Photo 4 මාරු වෙන Animation Keyframes */
+@keyframes slideAnimation {
+  0% { opacity: 0; }
+  6% { opacity: 1; }   /* Fade in */
+  25% { opacity: 1; }  /* Visible for 4 seconds */
+  31% { opacity: 0; }  /* Fade out */
+  100% { opacity: 0; }
+}
+
+/* Dark Gradient Overlay for Text Visibility */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%);
+  z-index: 2;
+}
+
+/* Content Area */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 650px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Brand / Logo Title */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+}
+
+.brand-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+/* Main Big Title */
+.main-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 1px;
+}
+
+.orange-text {
+  color: #ff7300; /* Screenshot එකේ තියෙන Orange Color එක */
+}
+
+/* Description Text */
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #f0f0f0;
+  font-weight: 400;
+}
+
+/* Buttons Styling */
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 24px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #ff7300;
+  color: #ffffff;
+  border: 2px solid #ff7300;
+}
+
+.btn-primary:hover {
+  background-color: #e06500;
+}
+
+.btn-outline {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+}
+
+.btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile & Tablet responsiveness */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 0 6%;
+  }
+
+  .main-title {
+    font-size: 2.4rem;
+  }
+
+  .description {
+    font-size: 0.98rem;
+  }
+
+  .brand-name {
+    font-size: 0.88rem;
+  }
+}
+
+/* PC Design Adjustment */
+@media (min-width: 992px) {
+  .btn-group {
+    flex-direction: row; /* PC එකේදී Button දෙක පසෙකින් තැබීමට */
+    width: auto;
+  }
+
+  .btn {
+    width: auto;
+    padding: 14px 32px;
+  }
+}
+
+
+/*result count*/
+/* Results Section Black & Gold Theme */
+.results-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.results-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Gold Sub-tag */
+.sub-tag {
+  color: #d4af37;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  padding: 6px 18px;
+  border-radius: 20px;
+  background: rgba(212, 175, 55, 0.08);
+}
+
+/* White Section Title */
+.section-title {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 45px;
+  font-weight: 800;
+}
+
+/* Counters Grid Layout */
+.counters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Counter Card Styling */
+.counter-card {
+  background: #111111;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 16px;
+  padding: 35px 20px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.counter-card:hover {
+  transform: translateY(-5px);
+  border-color: #ffd700;
+}
+
+/* Gold Gradient Numbers */
+.counter-number {
+  font-size: 3.2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffffff 0%, #ffd700 60%, #d4af37 100%);
+  
+  /* Standard & WebKit Properties */
+  background-clip: text;
+  -webkit-background-clip: text;
+  
+  /* Text Color Transparency */
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  
+  margin-bottom: 8px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Text Label */
+.counter-label {
+  font-size: 1rem;
+  color: #e0e0e0;
+  font-weight: 600;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .results-section {
+    padding: 50px 15px;
+  }
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  .counter-number {
+    font-size: 2.6rem;
+  }
+}
+
+
+/*result poto*/
+/* Orbit Section Background */
+.students-orbit-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 70px 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.orbit-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Orbit Wrapper (PC Size) */
+.orbit-wrapper {
+  position: relative;
+  width: 440px;
+  height: 440px;
+  margin: 50px auto 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center Gold Badge */
+.center-hub {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #1a1a1a 0%, #000000 100%);
+  border: 2px solid #ffd700;
+  color: #ffd700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+  z-index: 5;
+}
+
+.hub-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.hub-sub {
+  font-size: 0.65rem;
+  color: #ffffff;
+  letter-spacing: 1px;
+  margin-top: 3px;
+}
+
+/* Outer Orbit Track Line & Rotation */
+.orbit-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px dashed rgba(212, 175, 55, 0.3);
+  animation: rotateOrbit 25s linear infinite; /* කැරකෙන වේගය (25s) වෙනස් කළ හැක */
+}
+
+/* User එක උඩට Mouse එක ගෙනිච්චම Pause වෙන්න */
+.orbit-wrapper:hover .orbit-ring,
+.orbit-wrapper:hover .student-circle img {
+  animation-play-state: paused;
+}
+
+/* Student Photo Circles */
+.student-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 75px;
+  height: 75px;
+  margin-top: -37.5px;
+  margin-left: -37.5px;
+  border-radius: 50%;
+  border: 2px solid #ffd700;
+  background: #111;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+.student-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: counterRotate 25s linear infinite; /* ඡායාරූපය කෙළින්ම තබා ගැනීමට */
+}
+
+/* Angle Positioning for 8 Items (Radius: 180px) */
+.item-1 { transform: rotate(0deg) translate(180px) rotate(0deg); }
+.item-2 { transform: rotate(45deg) translate(180px) rotate(-45deg); }
+.item-3 { transform: rotate(90deg) translate(180px) rotate(-90deg); }
+.item-4 { transform: rotate(135deg) translate(180px) rotate(-135deg); }
+.item-5 { transform: rotate(180deg) translate(180px) rotate(-180deg); }
+.item-6 { transform: rotate(225deg) translate(180px) rotate(-225deg); }
+.item-7 { transform: rotate(270deg) translate(180px) rotate(-270deg); }
+.item-8 { transform: rotate(315deg) translate(180px) rotate(-315deg); }
+
+/* Animation Keyframes */
+@keyframes rotateOrbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes counterRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+/* Mobile Screen Responsiveness (Resize for Small Displays) */
+@media (max-width: 500px) {
+  .orbit-wrapper {
+    width: 290px;
+    height: 290px;
+    margin-top: 35px;
+  }
+
+  .center-hub {
+    width: 80px;
+    height: 80px;
+  }
+
+  .hub-title {
+    font-size: 1rem;
+  }
+
+  .hub-sub {
+    font-size: 0.55rem;
+  }
+
+  .student-circle {
+    width: 55px;
+    height: 55px;
+    margin-top: -27.5px;
+    margin-left: -27.5px;
+  }
+
+  /* Mobile Radius Adjustment (Radius: 120px) */
+  .item-1 { transform: rotate(0deg) translate(120px) rotate(0deg); }
+  .item-2 { transform: rotate(45deg) translate(120px) rotate(-45deg); }
+  .item-3 { transform: rotate(90deg) translate(120px) rotate(-90deg); }
+  .item-4 { transform: rotate(135deg) translate(120px) rotate(-135deg); }
+  .item-5 { transform: rotate(180deg) translate(120px) rotate(-180deg); }
+  .item-6 { transform: rotate(225deg) translate(120px) rotate(-225deg); }
+  .item-7 { transform: rotate(270deg) translate(120px) rotate(-270deg); }
+  .item-8 { transform: rotate(315deg) translate(120px) rotate(-315deg); }
+}
+
+
+
+/*class time table*/
+/* Schedule Section Styling */
+.schedule-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.schedule-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.schedule-section .sub-tag {
+  color: #d4af37;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  padding: 6px 18px;
+  border-radius: 20px;
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.schedule-section .section-title {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 45px;
+  font-weight: 800;
+}
+
+/* Grid Layout (Default PC: 3 columns) */
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  text-align: left;
+}
+
+/* Institute Card Styling */
+.institute-card {
+  background: #111111;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 16px;
+  padding: 20px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.institute-card:hover {
+  transform: translateY(-5px);
+  border-color: #ffd700;
+}
+
+/* Header (Logo + Name + Location) */
+.inst-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.inst-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.inst-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.inst-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.inst-location {
+  font-size: 0.8rem;
+  color: #d4af37;
+  font-weight: 500;
+  margin-top: 3px;
+}
+
+/* Batch Content Box */
+.batch-content {
+  margin-top: 15px;
+}
+
+.batch-box {
+  padding: 6px 0;
+}
+
+.batch-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffd700;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.batch-time {
+  font-size: 0.85rem;
+  color: #dcdcdc;
+  line-height: 1.4;
+}
+
+/* Inner Divider line separating 2027 and 2028 */
+.inner-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(212, 175, 55, 0.2);
+  margin: 10px 0;
+}
+
+/* Mobile Screen Responsiveness: Box 2 per row */
+@media (max-width: 768px) {
+  .schedule-section {
+    padding: 50px 10px;
+  }
+
+  .schedule-section .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  /* Mobile එකේදී box 2ක් පසෙකින් පෙන්වීමට */
+  .schedule-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .institute-card {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .inst-header {
+    gap: 8px;
+    padding-bottom: 10px;
+  }
+
+  .inst-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .inst-name {
+    font-size: 0.82rem;
+  }
+
+  .inst-location {
+    font-size: 0.7rem;
+  }
+
+  .batch-title {
+    font-size: 0.78rem;
+  }
+
+  .batch-time {
+    font-size: 0.72rem;
+  }
+
+  .inner-divider {
+    margin: 8px 0;
+  }
+}
+
+
+/*text animation*/
+/* Base Styling for Scroll Text Animations */
+.scroll-anim {
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+/* Effect 1: Fade Up */
+.scroll-anim.fade-up {
+  transform: translateY(80px);
+}
+
+/* Effect 2: Fade In Left */
+.scroll-anim.fade-in-left {
+  transform: translateX(-50px);
+}
+
+/* Effect 3: Zoom In */
+.scroll-anim.zoom-in {
+  transform: scale(0.85);
+}
+
+/* Active State (Scroll කරලා ඒ ස්ථානයට ආ පසු ක්‍රියාත්මක වේ) */
+.scroll-anim.appear {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+}
+
+
+
+/*payment box*/
+/* Smooth Scrolling Effect */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Container Styling */
+.online-class-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+    font-family: Arial, sans-serif;
+}
+
+/* Card Design */
+.teacher-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    padding: 25px 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Teacher Image Styling */
+.teacher-photo {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #007bff;
+    margin-bottom: 15px;
+}
+
+.teacher-card h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+/* Buttons Alignment */
+.button-group {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Base Button Style */
+.btn {
+    flex: 1;
+    padding: 12px 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.1s;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+/* Red Button - Register */
+.btn-register {
+    background-color: #dc3545;
+}
+
+.btn-register:hover {
+    background-color: #c82333;
+}
+
+/* Green Button - Payment */
+.btn-payment {
+    background-color: #28a745;
+}
+
+.btn-payment:hover {
+    background-color: #218838;
+}
+
+/* POPUP MODAL STYLING */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 9999; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.65); 
+    backdrop-filter: blur(3px);
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 450px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    animation: popupAnim 0.3s ease-out;
+    box-sizing: border-box;
+}
+
+@keyframes popupAnim {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Close Button (X) */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #777777;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: #000000;
+}
+
+.payment-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 12px;
+}
+
+/* Responsive tweaks for very small screens */
+@media (max-width: 360px) {
+    .button-group {
+        flex-direction: column;
+    }
+    .btn {
+        width: 100%;
+    }
+}
+
+
+/*memory*/
+/* Memories Gallery Section */
+.memories-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.memories-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Gallery Grid Layout (PC Setup) */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 35px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  height: 240px;
+  background: #111111;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+/* First Photo: Featured Large Box */
+.gallery-item.item-large {
+  grid-column: span 2;
+  grid-row: span 2;
+  height: 496px;
+}
+
+/* Image Hover Zoom Effect */
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover {
+  border-color: #ffd700;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+/* Text Overlay on Hover */
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+  color: #ffd700;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: left;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 768px) {
+  .memories-section {
+    padding: 50px 12px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .gallery-item {
+    height: 160px;
+    border-radius: 10px;
+  }
+
+  /* Mobile එකේදී ප්‍රධාන Photo එක උඩින්ම පළල්ව පෙනෙන පරිදි */
+  .gallery-item.item-large {
+    grid-column: span 2;
+    grid-row: span 1;
+    height: 210px;
+  }
+
+  .gallery-overlay {
+    opacity: 1; /* Touch screens සඳහා නිතරම text එක පෙනෙන පරිදි */
+    font-size: 0.78rem;
+    padding: 10px;
+  }
+}
+
+
+
+/*rsvp*/
+/* පෝරමය සඳහා සැකසුම් (Form Section Styles) */
+.rsvp-section {
+    padding: 60px 20px;
+    background-color: #f0f4f8;
+    font-family: 'A-FMBinara', 'Abhaya Libre', sans-serif;
+}
+
+.form-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.rsvp-section .section-title {
+    text-align: center;
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 16px;
+    color: #34495e;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.input-group input, 
+.input-group select {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid #ccd1d9;
+    border-radius: 8px;
+    box-sizing: border-box; /* පෝරමය එළියට පනින්නේ නැති වෙන්න */
+    transition: border-color 0.3s;
+    font-family: inherit;
+}
+
+.input-group input:focus, 
+.input-group select:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #e74c3c;
+    color: #ffffff;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: inherit;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #c0392b;
+}
+
+/* ජංගම දුරකථන සඳහා (Mobile Responsive) */
+@media screen and (max-width: 768px) {
+    .form-wrapper {
+        padding: 25px 20px;
+    }
+    .rsvp-section .section-title {
+        font-size: 20px;
+    }
+}
+
+
+/* Contact Section Styles */
+.contact-section {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    font-family: 'A-FMBinara', 'Abhaya Libre', sans-serif;
+}
+
+.contact-box {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #f8f9fa;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    border-top: 5px solid #25D366; /* WhatsApp කොළ පාට */
+}
+
+.contact-box .section-title {
+    font-size: 26px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.contact-description {
+    font-size: 16px;
+    color: #555555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* සාමාන්‍ය විස්තර (Phone & Email) */
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    font-size: 18px;
+    color: #34495e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact-icon {
+    font-size: 20px;
+}
+
+/* WhatsApp බොත්තම */
+.whatsapp-container {
+    margin-top: 20px;
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #25D366; /* Official WhatsApp Color */
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-btn:hover {
+    background-color: #1ebe57;
+    transform: translateY(-3px);
+}
+
+.wa-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* ජංගම දුරකථන සඳහා (Mobile Responsive) */
+@media screen and (max-width: 768px) {
+    .contact-box {
+        padding: 30px 20px;
+    }
+    
+    .contact-box .section-title {
+        font-size: 22px;
+    }
+
+    .whatsapp-btn {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+}
+.divider-line {
+    border-top: 1px solid #ffffff; /* සුදු පාට ඉර */
+    margin: 12px 0;                 /* උඩින් සහ යටින් ඉඩ (Gap) */
+    opacity: 0.6;                   /* ලස්සනට පෙනෙන්න පොඩි opacity එකක් (ඕන නැත්නම් මේ පේලිය අයින් කරන්න) */
+}
+
+
+
+/*profile poto*/
+/* Teacher Profile Section */
+.teacher-profile-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.teacher-profile-container {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+/* Gold Gradient Border Frame */
+.teacher-img-wrapper {
+  position: relative;
+  width: 320px;
+  height: 380px;
+  border-radius: 20px;
+  padding: 6px; /* Gold Border එකේ මහත */
+  background: linear-gradient(135deg, #ffffff 0%, #ffd700 50%, #d4af37 100%); /* Gold Gradient */
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.35); /* Subtle Gold Glow */
+  flex-shrink: 0;
+}
+
+.teacher-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  background-color: #111111;
+  display: block;
+}
+
+/* Details Section Styling */
+.teacher-details {
+  max-width: 500px;
+  text-align: left;
+}
+
+.teacher-details .sub-tag {
+  color: #d4af37;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 8px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  padding: 4px 14px;
+  border-radius: 20px;
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.teacher-name {
+  font-size: 2.2rem;
+  color: #ffffff;
+  margin: 10px 0 15px 0;
+  font-weight: 800;
+}
+
+.teacher-bio {
+  font-size: 1rem;
+  color: #cccccc;
+  line-height: 1.7;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .teacher-profile-section {
+    padding: 50px 15px;
+  }
+
+  .teacher-profile-container {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .teacher-details {
+    text-align: center;
+  }
+
+  .teacher-img-wrapper {
+    width: 250px;
+    height: 300px;
+  }
+
+  .teacher-name {
+    font-size: 1.8rem;
+  }
+
+  .teacher-bio {
+    font-size: 0.92rem;
+  }
+}
+
+
+
+/*rejister form*/
+/* Registration Section Styling */
+.registration-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.registration-container {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* Card Container */
+.reg-card {
+  background: radial-gradient(circle at top, #1a1a1a 0%, #0d0d0d 100%);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 20px;
+  padding: 50px 30px;
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.reg-title {
+  font-size: 2rem;
+  color: #ffffff;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.reg-description {
+  font-size: 1rem;
+  color: #cccccc;
+  max-width: 650px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* Gold Gradient Registration Button */
+.reg-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #ffd700 0%, #d4af37 100%);
+  color: #000000;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 16px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.reg-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+  background: linear-gradient(135deg, #ffffff 0%, #ffd700 100%);
+}
+
+.reg-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.reg-btn:hover svg {
+  transform: translateX(5px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .registration-section {
+    padding: 50px 15px;
+  }
+
+  .reg-card {
+    padding: 30px 18px;
+    border-radius: 16px;
+  }
+
+  .reg-title {
+    font-size: 1.4rem;
+  }
+
+  .reg-description {
+    font-size: 0.9rem;
+  }
+
+  .reg-btn {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+
+
+/*about teacher*/
+/* About Section Styling (Black Theme & Mobile Responsive) */
+.teacher-about-section {
+    background-color: #0a0a0a;
+    color: #ffffff;
+    padding: 80px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+.teacher-about-section * {
+    box-sizing: border-box;
+}
+
+.about-container {
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+/* Slogan Highlight Styling */
+.slogan-box {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 30px 20px;
+    background: linear-gradient(145deg, #141414, #1c1c1c);
+    border: 1px solid #2a2a2a;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.slogan-badge {
+    display: inline-block;
+    background: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.teacher-slogan {
+    font-size: 2.3rem;
+    font-weight: 800;
+    margin: 0;
+    background: linear-gradient(90deg, #ffffff, #f59e0b, #fbbf24);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.3;
+}
+
+/* Grid Layout - Desktop එකේ Photo එකට වැඩි ඉඩක් දී ඇත */
+.about-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+    align-items: center;
+}
+
+/* Teacher Photo Styling (Desktop එකේ Size එක ලොකු කර ඇත) */
+.teacher-image-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-glow {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.3) 0%, rgba(0, 0, 0, 0) 75%);
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.teacher-photo {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 440px; /* Desktop එකේ Photo එකේ උපරිම පළල වැඩි කළා */
+    height: 520px;     /* නියමිත උසක් දීලා photo එක පෙනුම ලස්සන කළා */
+    border-radius: 20px;
+    border: 2px solid #333333;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+    object-fit: cover; /* Photo එක ඇදී යෑමෙන් තොරව ලස්සනට සකස් වේ */
+    object-position: top center; /* Photo එකේ මුහුණ පැහැදිලිව පේන්න සකසා ඇත */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.teacher-photo:hover {
+    transform: translateY(-5px);
+    border-color: #f59e0b;
+}
+
+/* Details & Bio Styling */
+.teacher-name {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+    color: #ffffff;
+}
+
+.teacher-role {
+    font-size: 1.15rem;
+    color: #f59e0b;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+    letter-spacing: 0.5px;
+}
+
+.teacher-bio {
+    font-size: 1.02rem;
+    line-height: 1.8;
+    color: #b3b3b3;
+    margin-bottom: 30px;
+}
+
+/* Qualifications Box */
+.qualifications-box {
+    background-color: #121212;
+    border-left: 4px solid #f59e0b;
+    padding: 22px 25px;
+    border-radius: 0 12px 12px 0;
+    border-top: 1px solid #1f1f1f;
+    border-right: 1px solid #1f1f1f;
+    border-bottom: 1px solid #1f1f1f;
+}
+
+.qual-title {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.qual-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.qual-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 0.98rem;
+    color: #e0e0e0;
+}
+
+.qual-list li:last-child {
+    margin-bottom: 0;
+}
+
+.qual-icon {
+    font-size: 1.2rem;
+}
+
+/* Mobile & Tablet Responsive Adjustments */
+@media (max-width: 900px) {
+    .about-content-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .teacher-photo {
+        max-width: 340px;
+        height: 420px;
+    }
+
+    .qualifications-box {
+        text-align: left;
+    }
+}
+
+@media (max-width: 576px) {
+    .teacher-about-section {
+        padding: 50px 15px;
+    }
+
+    .teacher-slogan {
+        font-size: 1.6rem;
+    }
+
+    .teacher-photo {
+        max-width: 280px;
+        height: 350px;
+    }
+
+    .teacher-name {
+        font-size: 2rem;
+    }
+
+    .teacher-bio {
+        font-size: 0.95rem;
+    }
+}
+
+
+
+/*class time ,place*/
+/* Classes & Locations Section (Black Theme & Mobile Responsive) */
+.teacher-classes-section {
+    background-color: #080808;
+    color: #ffffff;
+    padding: 70px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-top: 1px solid #1a1a1a;
+    box-sizing: border-box;
+}
+
+.teacher-classes-section * {
+    box-sizing: border-box;
+}
+
+.classes-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Header Styling */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-badge {
+    display: inline-block;
+    background: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 6px 14px;
+    border-radius: 50px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.section-title {
+    font-size: 2.1rem;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+    color: #ffffff;
+}
+
+.section-subtitle {
+    font-size: 0.98rem;
+    color: #9ca3af;
+    margin: 0;
+}
+
+/* Cards Grid */
+.classes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    align-items: stretch;
+}
+
+.class-card {
+    background: linear-gradient(145deg, #121212, #181818);
+    border: 1px solid #262626;
+    border-radius: 16px;
+    padding: 28px 24px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.class-card:hover {
+    transform: translateY(-6px);
+    border-color: #f59e0b;
+    box-shadow: 0 12px 30px rgba(245, 158, 11, 0.12);
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.class-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.physical-tag {
+    background: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.online-tag {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.card-icon {
+    font-size: 1.6rem;
+}
+
+.class-category {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 20px 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #262626;
+}
+
+/* Institute List */
+.institute-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.institute-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: #0d0d0d;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #1f1f1f;
+}
+
+.loc-pin {
+    font-size: 1.15rem;
+    margin-top: 2px;
+}
+
+.institute-list strong {
+    display: block;
+    font-size: 1.02rem;
+    color: #f3f4f6;
+    margin-bottom: 2px;
+}
+
+.town-name {
+    display: block;
+    font-size: 0.88rem;
+    color: #f59e0b;
+    font-weight: 500;
+}
+
+.online-card .town-name {
+    color: #10b981;
+}
+
+/* Mobile & Tablet Responsive */
+@media (max-width: 900px) {
+    .classes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .teacher-classes-section {
+        padding: 50px 15px;
+    }
+
+    .section-title {
+        font-size: 1.65rem;
+    }
+
+    .classes-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .class-card {
+        padding: 22px 18px;
+    }
+}
+
+
+
+/*register form*/
+/* Registration Section Styling (Black Theme & Matching Colors) */
+.teacher-reg-section {
+    background-color: #080808;
+    color: #ffffff;
+    padding: 80px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    border-top: 1px solid #1a1a1a;
+}
+
+.teacher-reg-section * {
+    box-sizing: border-box;
+}
+
+.reg-container {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* Header */
+.reg-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.reg-badge {
+    display: inline-block;
+    background: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.reg-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+    color: #ffffff;
+}
+
+.reg-subtitle {
+    font-size: 0.98rem;
+    color: #9ca3af;
+    margin: 0;
+}
+
+/* Form Card Container */
+.reg-card {
+    background: linear-gradient(145deg, #121212, #181818);
+    border: 1px solid #262626;
+    border-radius: 20px;
+    padding: 35px 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #e5e7eb;
+    margin-bottom: 8px;
+}
+
+.form-group input, 
+.form-group select {
+    width: 100%;
+    padding: 14px 16px;
+    background-color: #0d0d0d;
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input::placeholder {
+    color: #6b7280;
+}
+
+.form-group input:focus, 
+.form-group select:focus {
+    border-color: #f59e0b;
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+}
+
+.form-group select option {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* WhatsApp Submit Button */
+.whatsapp-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #25D366, #1ebe5d);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 30px;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+}
+
+.btn-icon {
+    font-size: 1.2rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 576px) {
+    .teacher-reg-section {
+        padding: 50px 15px;
+    }
+
+    .reg-card {
+        padding: 25px 18px;
+    }
+
+    .reg-title {
+        font-size: 1.7rem;
+    }
+}
+
+
+/*footer*/
+/* Footer Section Styling (Black & Gold Theme) */
+.teacher-footer {
+    background-color: #050505;
+    color: #ffffff;
+    padding: 55px 20px 30px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-top: 1px solid #1f1f1f;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.teacher-footer * {
+    box-sizing: border-box;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Brand & Tagline */
+.footer-logo {
+    font-size: 1.7rem;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    background: linear-gradient(90deg, #ffffff, #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer-tagline {
+    font-size: 0.92rem;
+    color: #9ca3af;
+    margin: 0 0 28px 0;
+}
+
+/* Social Media Icons */
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 35px;
+}
+
+.social-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #121212;
+    border: 1px solid #2a2a2a;
+    color: #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* මෙන්න මෙතැනින් තමයි icon තුනේ සයිස් එක එකම ප්‍රමාණයට හරියටම පාලනය කරන්නේ */
+.social-icon svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+    fill: currentColor;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px);
+    color: #ffffff;
+}
+
+/* Platform-specific Hover Glows */
+.fb-icon:hover {
+    background-color: #1877F2;
+    border-color: #1877F2;
+    box-shadow: 0 8px 20px rgba(24, 119, 242, 0.4);
+}
+
+.tiktok-icon:hover {
+    background-color: #000000;
+    border-color: #ff0050;
+    box-shadow: -3px -2px 12px rgba(0, 242, 234, 0.5), 3px 2px 12px rgba(255, 0, 80, 0.5);
+}
+
+.wa-icon:hover {
+    background-color: #25D366;
+    border-color: #25D366;
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+}
+
+/* Divider */
+.footer-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #262626, transparent);
+    margin-bottom: 22px;
+}
+
+/* Bottom Credits */
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.88rem;
+    color: #737373;
+}
+
+.copyright-text, .developer-credit {
+    margin: 0;
+}
+
+.dev-link {
+    color: #f59e0b;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.dev-link:hover {
+    color: #fbbf24;
+    text-decoration: underline;
+}
+
+.dev-phone {
+    color: #d4d4d4;
+    font-weight: 500;
+}
+
+/* Mobile Responsive */
+@media (max-width: 576px) {
+    .teacher-footer {
+        padding: 40px 15px 25px 15px;
+    }
+
+    .footer-logo {
+        font-size: 1.45rem;
+    }
+
+    .social-icon {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+
+
+  </style>
+</head>
+<body>
+
+  <section class="hero-section">
+    
+    <!-- 4 Background Images Slider -->
+    <div class="bg-slider">
+      <div class="slide slide-1"></div>
+      <div class="slide slide-2"></div>
+      <div class="slide slide-3"></div>
+      <div class="slide slide-4"></div>
+    </div>
+
+    <!-- Text එක ලස්සනට පේන්න දාන Dark Overlay එක -->
+    <div class="overlay"></div>
+
+    <!-- එක තැන තියෙන Text සහ Buttons ටික -->
+    <div class="hero-content">
+      
+      <div class="brand">
+        <img src="t1.jpg" alt="Logo" class="logo" data-aos="fade-up" data-aos-duration="1300">
+        <span class="brand-name" data-aos="fade-up" data-aos-duration="1300">English From A to Z</span>
+      </div>
+
+      <h1 class="main-title" data-aos="fade-up" data-aos-duration="1500" style="font-size: 34px;">
+        <span class="orange-text"  >ENGLISH </span>CLASS
+      </h1>
+
+      <p class="description" data-aos="fade-up" data-aos-duration="1800">
+        English is Easy, If You Learn Right! <br>කතා කරන්න,ලියන්න,විශ්වාසයෙන් ඉදිරියට යන්න.<br> Spoken + Grammae + O/L - A/L
+      </p>
+
+      <div class="btn-group">
+        <a href="#register-form" class="btn btn-primary" data-aos="fade-up" data-aos-duration="2100">Online Class එකට එකතු වෙන්න</a>
+        <a href="#contact1" class="btn btn-outline" data-aos="fade-up" data-aos-duration="2300">WhatsApp හරහා අසන්න</a>
+      </div>
+
+    </div>
+
+  </section>
+
+<!-- About Section Start -->
+<section class="teacher-about-section" id="about">
+    <div class="about-container">
+        
+        <!-- Highlighted Slogan -->
+        <div class="slogan-box scroll-anim fade-up">
+            <span class="slogan-badge" style="font-size: 10px;" >English with Dinushan</span>
+            <h2 class="teacher-slogan" style="font-size: 24px;">English From A to Z</h2>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="about-content-grid scroll-anim fade-up">
+            
+            <!-- Teacher Photo -->
+            <div class="teacher-image-wrapper scroll-anim fade-up">
+                <div class="image-glow"></div>
+                <!-- පහළ src එකට Sir ගේ photo එකේ link එක දාන්න -->
+                <img src="t2.jpg" alt="English Teacher" class="teacher-photo">
+            </div>
+
+            <!-- Teacher Details & Degrees -->
+            <div class="teacher-details scroll-anim fade-up">
+                <h3 class="teacher-name">Mr. Dinushan_S</h3>
+                <p class="teacher-role"> English Language Teacher</p>
+                
+                <p class="teacher-bio">
+                    වසර ගනණක ඉගැන්වීමේ පළපුරුද්ද සමඟින්, සරල සහ ප්‍රායෝගික ක්‍රමවේද ඔස්සේ සිසුන්ගේ ඉංග්‍රීසි දැනුම ඉහළ නැංවීමට කැපවූ ගුරුවරයෙකි. O/L, A/L සහ Spoken English පාඨමාලා හරහා දහස් ගණනක් සිසුන්ගේ සිහින සැබෑ කිරීමට මඟ පෙන්වා ඇත.
+                </p>
+
+                <!-- Qualifications / Degrees -->
+                <div class="qualifications-box">
+                    <h4 class="qual-title"> Qualifications</h4>
+                    <ul class="qual-list">
+                        <li>
+                            <span class="qual-icon">🎓</span>
+                            <span><strong>B.ICT</strong> (UCSC)</span>
+                        </li>
+                        <li>
+                            <span class="qual-icon">🎓</span>
+                            <span><strong>Certificate in English</strong> (DTET)</span>
+                        </li>
+                        <li>
+                            <span class="qual-icon">🎓</span>
+                            <span><strong>Diploma in English</strong> </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- About Section End -->
+
+
+
+
+
+<!-- Class Schedule Section -->
+<!-- Classes & Locations Section Start -->
+<section class="teacher-classes-section" id="classes">
+    <div class="classes-container">
+        
+        <div class="section-header scroll-anim fade-up">
+            <span class="section-badge">JOIN OUR CLASSES</span>
+            <h2 class="section-title">Physical & Online Classes</h2>
+            <p class="section-subtitle">Timetable will be announced soon. Find your nearest institute or join online!</p>
+        </div>
+
+        <div class="classes-grid">
+            
+            <!-- Card 1: A/L General English -->
+            <div class="class-card">
+                <div class="card-top scroll-anim fade-up">
+                    <span class="class-tag physical-tag">Physical Class</span>
+                    <span class="card-icon"></span>
+                </div>
+                <h3 class="class-category scroll-anim fade-up">A/L General English</h3>
+                <ul class="institute-list scroll-anim fade-up">
+                    <li>
+                        <span class="loc-pin">📍</span>
+                        <div>
+                            <strong>Pencil Opera</strong>
+                            <span class="town-name">Kurunegala</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Card 2: Grade 6 - 11 Classes -->
+            <div class="class-card">
+                <div class="card-top scroll-anim fade-up">
+                    <span class="class-tag physical-tag">Physical Class</span>
+                    <span class="card-icon"></span>
+                </div>
+                <h3 class="class-category scroll-anim fade-up">Grade 6 - 11 English</h3>
+                <ul class="institute-list scroll-anim fade-up">
+                    <li>
+                        <span class="loc-pin">📍</span>
+                        <div>
+                            <strong>Goal Line</strong>
+                            <span class="town-name">Ibbagamuwa</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="loc-pin">📍</span>
+                        <div>
+                            <strong>Zigma</strong>
+                            <span class="town-name">Gokarella</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="loc-pin">📍</span>
+                        <div>
+                            <strong>Sipyana</strong>
+                            <span class="town-name">Rambe</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Card 3: Online Spoken Class -->
+            <div class="class-card online-card">
+                <div class="card-top scroll-anim fade-up">
+                    <span class="class-tag online-tag">Online Class</span>
+                    <span class="card-icon"></span>
+                </div>
+                <h3 class="class-category scroll-anim fade-up">Spoken English</h3>
+                <ul class="institute-list scroll-anim fade-up">
+                    <li>
+                        <!-- <span class="loc-pin">🇱🇰</span> -->
+                        <div>
+                            <strong>All Island Live Classes</strong>
+                            <span class="town-name">Via Zoom / Online Platform</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- Classes & Locations Section End -->
+
+
+
+
+<!-- Memories Gallery Section -->
+<section class="memories-section">
+  <div class="memories-container">
+    
+    <span class="sub-tag">අපේ මතකයන්</span>
+    <h2 class="section-title">සිසුන් සමඟ සුන්දර මතක සටහන්</h2>
+
+    <div class="gallery-grid">
+      
+      <!-- Photo 1 (Main Featured Photo) -->
+      <div class="gallery-item item-large scroll-anim fade-up">
+        <img src="3.jpg" alt="Students Memory 1">
+        <div class="gallery-overlay">
+        
+        </div>
+      </div>
+
+      <!-- Photo 2 -->
+      <div class="gallery-item scroll-anim fade-up" data-delay="100">
+        <img src="4.jpg" alt="Students Memory 2">
+        <div class="gallery-overlay">
+     
+        </div>
+      </div>
+
+      <!-- Photo 3 -->
+      <div class="gallery-item scroll-anim fade-up" data-delay="200">
+        <img src="1.jpg" alt="Students Memory 3">
+        <div class="gallery-overlay">
+
+        </div>
+      </div>
+
+      <!-- Photo 4 -->
+      <div class="gallery-item scroll-anim fade-up" data-delay="300">
+        <img src="2.jpg" alt="Students Memory 4">
+        <div class="gallery-overlay">
+
+        </div>
+      </div>
+
+      <!-- Photo 5 -->
+      <div class="gallery-item scroll-anim fade-up" data-delay="400">
+        <img src="about.jpg" alt="Students Memory 5">
+        <div class="gallery-overlay">
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- Registration Section 
+<section class="registration-section" >
+  <div class="registration-container scroll-anim fade-up">
+    
+    <div class="reg-card">
+      <span class="sub-tag"> පන්ති සඳහා ලියාපදිංචිය</span>
+      <h2 class="reg-title">2027 / 2028 A/L Business Studies පන්ති සඳහා දැන්ම ලියාපදිංචි වන්න</h2>
+      
+      <p class="reg-description">
+        ඔබේ ආසනය වෙන් කර ගැනීමට සහ පන්තිවලට අදාළ නිබන්ධන (Tutes) නිවසටම ගෙන්වා ගැනීමට පහත Button එක ක්ලික් කර ලියාපදිංචි පෝරමය (Form) සම්පූර්ණ කරන්න.
+      </p>
+
+      
+      <a href="https://forms.edumix.lk/f/new-student" target="_blank" class="reg-btn">
+        <span>ලියාපදිංචි වීමට මෙතැනින් පිවිසෙන්න</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+    </div>
+
+  </div>
+</section> -->
+
+<!-- Student Registration Section Start -->
+<section class="teacher-reg-section" id="register">
+    <div class="reg-container scroll-anim fade-up" id="register-form">
+        
+        <div class="reg-header scroll-anim fade-up">
+            <span class="reg-badge">JOIN WITH US</span>
+            <h2 class="reg-title">Student Registration Form</h2>
+            <p class="reg-subtitle">Fill out the details below to register for the classes.</p>
+        </div>
+
+        <!-- Registration Form Box -->
+        <div class="reg-card">
+            <form id="whatsappRegForm" onsubmit="sendToWhatsApp(event)">
+                
+                <!-- Student Name -->
+                <div class="form-group scroll-anim fade-up">
+                    <label for="studentName">ශිෂ්‍යයාගේ නම (Student's Name)</label>
+                    <input type="text" id="studentName" placeholder="උදා: kamal perera" required>
+                </div>
+
+                <!-- Student Grade / Class -->
+                <div class="form-group scroll-anim fade-up">
+                    <label for="studentClass">පන්තිය / ශ්‍රේණිය (Grade / Class)</label>
+                    <input type="text" id="studentClass" placeholder="උදා: Grade 10 / A/L General English" required>
+                </div>
+
+                <!-- Institute / Method Selection -->
+                <div class="form-group scroll-anim fade-up">
+                    <label for="instituteSelect">පැමිණෙන ආයතනය (Institute / Method)</label>
+                    <select id="instituteSelect" required>
+                        <option value="" disabled selected>ආයතනයක් තෝරන්න</option>
+                        <option value="Pencil Opera - Kurunegala">Pencil Opera - Kurunegala</option>
+                        <option value="Goal Line - Ibbagamuwa">Goal Line - Ibbagamuwa</option>
+                        <option value="Zigma - Gokarella">Zigma - Gokarella</option>
+                        <option value="Sipyana - Rambe">Sipyana - Rambe</option>
+                        <option value="Online Class">Online Class (All Island)</option>
+                    </select>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="whatsapp-btn scroll-anim fade-up">
+                    <span class="btn-icon"></span> WhatsApp හරහා ලියාපදිංචි වන්න
+                </button>
+
+            </form>
+        </div>
+
+    </div>
+</section>
+<!-- Student Registration Section End -->
+
+
+<!-- Teacher Profile / About Section -->
+<section class="teacher-profile-section">
+  <div class="teacher-profile-container">
+    
+    <!-- Gold Bordered Photo Box -->
+    <div class="teacher-img-wrapper scroll-anim zoom-in">
+      <img src="t3.jpg" alt="Teacher Photo" class="teacher-img">
+    </div>
+
+    <!-- Teacher Bio / Details Side -->
+    <div class="teacher-details scroll-anim fade-up" data-delay="200">
+      <span class="sub-tag">The Teacher</span>
+      <h2 class="teacher-name">Mr. Dinushan_S</h2>
+      <p class="teacher-bio">
+        Learn English the easy way - with confidence , clarity and care. <br>Spoken English | O/L & A/L English <br>Join Today and Speak English without fear
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- සම්බන්ධ කරගැනීමේ කොටස (Contact Section) -->
+<section class="contact-section" id="contact">
+    <div class="container">
+        <div class="contact-box" id="contact1">
+            <h2 class="section-title">ගුරුතුමා සම්බන්ධ කරගන්න</h2>
+            <p class="contact-description">පන්ති පිළිබඳ වැඩිදුර විස්තර දැනගැනීමට පහත දුරකථන අංකයට අමතන්න හෝ WhatsApp හරහා පණිවිඩයක් එවන්න.</p>
+
+            <!-- සාමාන්‍ය විස්තර -->
+            <div class="contact-details">
+                <div class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <p><strong>දුරකථන:</strong> 072 236 1973</p>
+                </div>
+              
+            </div>
+
+            <!-- WhatsApp බොත්තම -->
+            <div class="whatsapp-container">
+                <!-- 947XXXXXXXX වෙනුවට ඔයාගේ නම්බර් එක දාන්න (බිංදුව නැතුව 94 න් පටන්ගන්න) -->
+                <a href="https://wa.me/94722361973" target="_blank" class="whatsapp-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="wa-icon" viewBox="0 0 16 16">
+                        <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                    </svg>
+                    WhatsApp හරහා සම්බන්ධ වන්න
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Footer Section Start -->
+<footer class="teacher-footer">
+    <div class="footer-container">
+        
+        <div class="footer-brand">
+            <h3 class="footer-logo">English with Dinushan</h3>
+            <p class="footer-tagline">English From A to Z — Empowering Students for a Brighter Future</p>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="social-links">
+            
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/dinu.madhushan.5" target="_blank" rel="noopener noreferrer" class="social-icon fb-icon" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+                </svg>
+            </a>
+
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@dinushan__s?_r=1&_t=ZS-9BKvlSRcyCS" target="_blank" rel="noopener noreferrer" class="social-icon tiktok-icon" aria-label="TikTok">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                </svg>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/94722361973" target="_blank" rel="noopener noreferrer" class="social-icon wa-icon" aria-label="WhatsApp">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 1.856.001 3.598.723 4.907 2.034 1.31 1.311 2.031 3.054 2.03 4.908-.001 3.825-3.113 6.938-6.937 6.938z"/>
+                </svg>
+            </a>
+
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <!-- Bottom Credits -->
+        <div class="footer-bottom">
+            <p class="copyright-text">© 2026 Mr. Dinushan_S. All Rights Reserved.</p>
+            <p class="developer-credit">
+                Designed & Developed by 
+                <a href="https://wa.me/94781227941" target="_blank" rel="noopener noreferrer" class="dev-link">
+                    Home Artist <span class="dev-phone">(078 122 7941)</span>
+                </a>
+            </p>
+        </div>
+
+    </div>
+</footer>
+<!-- Footer Section End -->
+
+
+  <!-- AOS JS Library -->
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    //mula thiyana text animation eka 
+  AOS.init({
+    once: true // Web page එක open වෙද්දි එක පාරක් විතරක් animate වෙන්න
+  });
+
+
+  //result count 
+ 
+  document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll('.counter-number');
+
+    const startCounting = (counter) => {
+      const target = +counter.getAttribute('data-target');
+      const duration = 2000; // Count වෙන්න යන මුළු කාලය (Milliseconds - 2 Seconds)
+      const stepTime = 20;
+      const totalSteps = duration / stepTime;
+      const increment = target / totalSteps;
+
+      let current = 0;
+
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          counter.innerText = target + "+"; // අගය ඉවර වුණාම අගට + සලකුණ වැටේ
+          clearInterval(timer);
+        } else {
+          counter.innerText = Math.ceil(current);
+        }
+      }, stepTime);
+    };
+
+    // User Scroll කරලා Section එකට ආවම විතරක් Count වෙන්න හදපු Observer එක
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          startCounting(entry.target);
+          observer.unobserve(entry.target); // එක පාරක් වැඩ කළ පසු නතර වේ
+        }
+      });
+    }, { threshold: 0.3 });
+
+    counters.forEach(counter => {
+      observer.observe(counter);
+    });
+  });
+
+//text animation 
+document.addEventListener("DOMContentLoaded", () => {
+    const animatedTexts = document.querySelectorAll('.scroll-anim');
+
+    const textObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = entry.target.getAttribute('data-delay') || 0;
+          
+          setTimeout(() => {
+            entry.target.classList.add('appear');
+          }, delay);
+
+          textObserver.unobserve(entry.target); // එක පාරක් animate වූ පසු නතර වේ
+        }
+      });
+    }, {
+      threshold: 0.15 // Text එකෙන් 15%ක් Screen එකට ආ පසු Animation එක පටන් ගනී
+    });
+
+    animatedTexts.forEach(text => textObserver.observe(text));
+  });
+
+
+
+//payment box
+    // Payment Details Modal එක Open කරන Function එක
+function openPaymentModal() {
+    document.getElementById("paymentModal").style.display = "flex";
+}
+
+// Modal එක Close කරන Function එක
+function closePaymentModal() {
+    document.getElementById("paymentModal").style.display = "none";
+}
+
+// Modal එකෙන් එලිය ක්ලික් කල විටත් auto close වන කෝඩ් එක
+window.onclick = function(event) {
+    var modal = document.getElementById("paymentModal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+//registe form
+function sendToWhatsApp(event) {
+    event.preventDefault(); // Form එක සාමාන්‍ය පරිදි submit වීම වළක්වයි
+
+    // Input වලට දීපු අගයන් ලබා ගැනීම
+    const name = document.getElementById('studentName').value;
+    const studentClass = document.getElementById('studentClass').value;
+    const institute = document.getElementById('instituteSelect').value;
+
+    // සර්ගේ WhatsApp අංකය (0722361973 -> 94722361973)
+    const phoneNumber = "94722361973";
+
+    // WhatsApp එකට යැවෙන පණිවිඩයේ ආකෘතිය
+    const message = `*නව පන්ති ලියාපදිංචි වීමක් (New Registration)*%0A%0A` +
+                    ` *නම:* ${encodeURIComponent(name)}%0A` +
+                    ` *පන්තිය:* ${encodeURIComponent(studentClass)}%0A` +
+                    ` *ආයතනය:* ${encodeURIComponent(institute)}`;
+
+    // WhatsApp URL එක නිර්මාණය කර ඊට යොමු කිරීම
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+    
+    window.open(whatsappURL, '_blank');
+}
+
+
+
+</script>
+
+</body>
+</html>
